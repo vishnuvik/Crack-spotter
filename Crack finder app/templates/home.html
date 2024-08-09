@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crack Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="brand">
+                <a href="/">Crack Detection</a>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('predict') }}">Predict</a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>Welcome to Crack Detection</h1>
+        <p>Upload an image to check if it is cracked or not.</p>
+        <a href="{{ url_for('predict') }}" class="btn">Go to Prediction Page</a>
+    </header>
+</body>
+</html>

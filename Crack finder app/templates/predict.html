@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Crack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="brand">
+                <a href="/">Crack Detection</a>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('predict') }}">Predict</a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>Upload Image for Crack Prediction</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+        {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <img src="{{ url_for('static', filename='images/' ~ image_path) }}" alt="Uploaded Image" class="uploaded-image">
+        {% endif %}
+    </header>
+</body>
+</html>
